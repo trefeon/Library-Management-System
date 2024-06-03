@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->integer('published_year');
+            $table->text('description'); // Add this line
             $table->timestamps();
         });
-    }    
+    }
     
     /**
      * Reverse the migrations.

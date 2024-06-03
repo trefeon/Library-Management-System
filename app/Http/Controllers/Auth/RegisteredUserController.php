@@ -13,6 +13,9 @@ use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+    public function create(){
+        return view('auth.register');
+    }
     public function store(Request $request)
     {
         $request->validate([

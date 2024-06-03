@@ -35,4 +35,30 @@ class BookController extends Controller
     {
         return view('books.show', compact('book'));
     }
+
+    public function destroy(Book $book)
+    {
+        $book->delete();
+        return redirect()->route('books.index')->with('success', 'Book deleted successfully');
+    }
+
+    public function edit($id)
+    {
+        $book = Book::find($id);
+        return view('books.edit', compact('book'));
+    }
+
+    public function update(Request $request, Book $book)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'published_year' => 'required|integer',
+            'description' => 'required|string',
+        ]);
+    
+        $book->update($validatedData);
+    
+        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
+    }
 }

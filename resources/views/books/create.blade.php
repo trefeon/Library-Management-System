@@ -17,6 +17,10 @@
             <label for="published_year">Published Year</label>
             <input type="number" name="published_year" class="form-control" required>
         </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" class="form-control" required></textarea>
+        </div>
         <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
 </div>

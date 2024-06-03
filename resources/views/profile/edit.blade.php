@@ -10,7 +10,7 @@
     @endif
     <form method="POST" action="{{ route('profile.update') }}">
         @csrf
-        @method('PUT')
+        @method('PATCH') <!-- Ubah dari PUT ke PATCH -->
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
